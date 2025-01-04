@@ -1,7 +1,9 @@
 # Food Ordering System
 
 ## Description
-A food ordering system built with React for the frontend, Node.js and Express for the backend, and MongoDB for data storage. The system allows users to browse through various food items, add them to their cart, and place an order. The app also handles user authentication, food management, and order placement.
+A food ordering system built with React for the frontend, Node.js and Express for the backend, and MongoDB for data storage. The system allows users to browse through various food items, add them to their cart, and place an order. The app also handles user authentication, food management, and order placement. Additionally, the system includes a separate admin panel where administrators can manage food items by adding or removing them, as well as update the order status (e.g., processing, shipped, delivered), providing complete control over food and order management.
+
+The application also integrates Stripe payment for secure and seamless transaction processing, enabling users to make payments for their orders directly through the platform.
 
 ## Features
 1. User authentication
@@ -67,7 +69,7 @@ A food ordering system built with React for the frontend, Node.js and Express fo
   `POST /api/order/userorders`  
   Retrieves all orders placed by a specific user.
 
-- **List Orders (Admin)**  
+- **List Orders**  
   `GET /api/order/list`  
   Retrieves all orders for admin view.
 
