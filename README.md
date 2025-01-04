@@ -1,101 +1,82 @@
 # Food Ordering System
-<h2>Description</h2>
+
+## Description
 A food ordering system built with React for the frontend, Node.js and Express for the backend, and MongoDB for data storage. The system allows users to browse through various food items, add them to their cart, and place an order. The app also handles user authentication, food management, and order placement.
 
-Features
-User authentication
-Cart management (add, remove, view items)
-Place an order and make payment via Stripe
-Admin panel to view and manage orders
-Order status update functionality
-User account management (signup, login, update profile)
-Tech Stack
-Frontend: React.js
-Backend: Node.js, Express.js
-Database: MongoDB
-Payment Integration: Stripe
-API Endpoints
-User Endpoints
-User Registration
-POST /api/user/register
-Registers a new user with a username, email, and password.
+## Features
+1. User authentication
+2. Cart management (add, remove, view items)
+3. Place an order and make payment via Stripe
+4. Admin panel to view and manage orders
+5. Order status update functionality
+6. User account management (signup, login, update profile)
 
-User Login
-POST /api/user/login
-Authenticates an existing user and returns a JWT token.
+## Tech Stack
+- **Frontend**: React.js
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Payment Integration**: Stripe
 
-Food Endpoints
-Add Food Item
-POST /api/food/add
-Adds a new food item to the database.
+## API Endpoints
 
-Remove Food Item
-POST /api/food/remove
-Removes a food item from the database.
+### User Endpoints
+- **User Registration**  
+  `POST /api/user/register`  
+  Registers a new user with a username, email, and password.
 
-Get Food List
-GET /api/food/list
-Retrieves a list of all food items.
+- **User Login**  
+  `POST /api/user/login`  
+  Authenticates an existing user and returns a JWT token.
 
-Get Food Details
-POST /api/food/details
-Retrieves details of a specific food item by its ID.
+### Food Endpoints
+- **Add Food Item**  
+  `POST /api/food/add`  
+  Adds a new food item to the database.
 
-Cart Endpoints
-Add Item to Cart
-POST /api/cart/add
-Adds an item to the user's cart or increases its quantity.
+- **Remove Food Item**  
+  `POST /api/food/remove`  
+  Removes a food item from the database.
 
-Remove Item from Cart
-POST /api/cart/remove
-Removes an item from the user's cart or decreases its quantity.
+- **Get Food List**  
+  `GET /api/food/list`  
+  Retrieves a list of all food items.
 
-Get User Cart
-POST /api/cart/get
-Retrieves the current items and their quantities in the user's cart.
+### Cart Endpoints
+- **Add Item to Cart**  
+  `POST /api/cart/add`  
+  Adds an item to the user's cart or increases its quantity.
 
-Order Endpoints
-Place Order
-POST /api/order/place
-Places a new order with the user's cart items, shipping address, and amount.
+- **Remove Item from Cart**  
+  `POST /api/cart/remove`  
+  Removes an item from the user's cart or decreases its quantity.
 
-Verify Order
-POST /api/order/verify
-Verifies the payment status of an order after Stripe checkout.
+- **Get User Cart**  
+  `POST /api/cart/get`  
+  Retrieves the current items and their quantities in the user's cart.
 
-User Orders
-POST /api/order/userorders
-Retrieves all orders placed by a specific user.
+### Order Endpoints
+- **Place Order**  
+  `POST /api/order/place`  
+  Places a new order with the user's cart items, shipping address, and amount.
 
-List Orders (Admin)
-GET /api/order/list
-Retrieves all orders for admin view.
+- **Verify Order**  
+  `POST /api/order/verify`  
+  Verifies the payment status of an order after Stripe checkout.
 
-Update Order Status
-POST /api/order/status
-Updates the status of a specific order (e.g., processing, shipped, delivered).
+- **User Orders**  
+  `POST /api/order/userorders`  
+  Retrieves all orders placed by a specific user.
 
-Setup
-Clone this repository:
+- **List Orders (Admin)**  
+  `GET /api/order/list`  
+  Retrieves all orders for admin view.
 
-bash
-Copy code
-git clone https://github.com/yourusername/food-delivery-app.git
-Install dependencies:
+- **Update Order Status**  
+  `POST /api/order/status`  
+  Updates the status of a specific order (e.g., processing, shipped, delivered).
 
-bash
-Copy code
-npm install
-Create a .env file with the following environment variables:
+## Setup
 
-STRIPE_SECRET_KEY: Your Stripe secret key for payments
-MONGO_URI: MongoDB connection URI
-JWT_SECRET: Secret key for JWT authentication
-Run the application:
-
-bash
-Copy code
-npm start
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/food-delivery-app.git
