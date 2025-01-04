@@ -77,5 +77,3 @@ The application also integrates Stripe payment for secure and seamless transacti
   `POST /api/order/status`  
   Updates the status of a specific order (e.g., processing, shipped, delivered).
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
