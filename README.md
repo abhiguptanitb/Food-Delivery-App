@@ -75,8 +75,5 @@ A food ordering system built with React for the frontend, Node.js and Express fo
   `POST /api/order/status`  
   Updates the status of a specific order (e.g., processing, shipped, delivered).
 
-## Setup
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/food-delivery-app.git
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
