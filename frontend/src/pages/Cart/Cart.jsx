@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import './Cart.css';
 import {StoreContext} from '../../context/StoreContext'
 import { useNavigate } from 'react-router-dom';
+import 'remixicon/fonts/remixicon.css'
 
 const Cart = () => {
 
@@ -10,7 +11,7 @@ const Cart = () => {
     const navigate=useNavigate();
 
     return (
-        <div>
+        <div className='cart'>
             <div className="cart-items">
                 <div className="cart-items-title">
                     <p>Items</p>
@@ -32,7 +33,7 @@ const Cart = () => {
                                     <p>${item.price}</p>
                                     <p>{cartItems[item._id]}</p>
                                     <p>${item.price*cartItems[item._id]}</p>
-                                    <p onClick={()=>removeFromCart(item._id)} className='cross'>x</p>
+                                    <p onClick={()=>removeFromCart(item._id)}><i className="ri-delete-bin-line" style={{fontSize:'24px'}}></i></p>
                                 </div>
                                 <hr/>
                             </>

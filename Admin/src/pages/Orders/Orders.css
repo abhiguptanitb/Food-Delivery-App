@@ -19,6 +19,10 @@
     margin-bottom: 5px;
 }
 
+.order-item-name::first-letter {
+    text-transform: uppercase;
+}
+
 .order-item-address {
     margin-bottom: 10px;
 }

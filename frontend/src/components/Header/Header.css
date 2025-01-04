@@ -4,6 +4,7 @@
     background: url('/header_img.png') no-repeat;
     background-size: contain;
     position: relative;
+    margin-top: 95px;
 }
 
 .header-contents {
@@ -16,6 +17,7 @@
     bottom: 10%;
     left:6vw;
     animation: fadeIn 3s;
+    margin-bottom: 55px;
 }
 
 .header-contents h2 {
@@ -27,16 +29,6 @@
 .header-contents p {
     color: white;
     font-size: 1vw;
-}
-
-.header-contents button {
-    border: none;
-    color: #747474;
-    font-weight: 500;
-    padding: 1vw 2.3vw;
-    background-color: white;
-    font-size: max(1vw,13px);
-    border-radius: 50px;
 }
 
 @media (max-width:1050px) {
@@ -51,8 +43,5 @@
     }
     .header-contents p {
         display: none;
-    }
-    .header-contents button {
-        padding: 2vw 4vw;
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import { assets } from '../../assets/assets'
+import 'remixicon/fonts/remixicon.css'
 
 const Footer = () => {
     return (
@@ -9,10 +10,10 @@ const Footer = () => {
                 <div className="footer-content-left">
                     <img src={assets.logo} alt="" />
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit autem quos voluptate repellendus dolorem, ducimus consequuntur iste, porro asperiores dignissimos velit reprehenderit qui saepe. Ullam aliquid esse quas earum ab!</p>
-                    <div className="footer-social-icons">
-                        <img src={assets.facebook_icon} alt="" />
-                        <img src={assets.twitter_icon} alt="" />
-                        <img src={assets.linkedin_icon} alt="" />
+                    <div className="footer-social-icons" style={{display: 'flex', gap: '10px'}} >
+                        <i className="ri-facebook-line" style={{ fontSize: '24px'}}></i>
+                        <i className="ri-twitter-line" style={{ fontSize: '24px' }}></i>
+                        <i className="ri-linkedin-line" style={{ fontSize: '24px' }}></i>
                     </div>
                 </div>
                 <div className="footer-content-center">

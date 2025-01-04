@@ -3,6 +3,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 500;
 }
 
 .navbar .logo {
@@ -49,16 +56,6 @@
 
 .navbar-search-icon {
     position: relative;
-}
-
-.navbar-search-icon .dot {
-    position: absolute;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: tomato;
-    border-radius: 5px;
-    top:-8px;
-    right: -8px;
 }
 
 .navbar-profile {

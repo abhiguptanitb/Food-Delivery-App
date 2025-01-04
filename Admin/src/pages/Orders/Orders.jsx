@@ -5,6 +5,7 @@ import axios from "axios"
 import {toast} from "react-toastify"
 import { useEffect } from 'react'
 import { assets } from '../../assets/assets'
+import 'remixicon/fonts/remixicon.css'
 
 const Orders = ({url}) => {
 
@@ -57,10 +58,10 @@ const Orders = ({url}) => {
                                 {order.address.firstName + " " + order.address.lastName}
                             </p>
                             <div className="order-item-address">
-                                <p>{order.address.street + ","}</p>
-                                <p>{order.address.city + ", " + order.address.state + ", " + order.address.country + ", " + order.address.zipcode}</p>
+                                <p> <i class="ri-map-pin-line" style={{color: 'blue'}}></i> {order.address.street + ","}</p>
+                                <p>  {order.address.city + ", " + order.address.state + ", " + order.address.country + ", " + order.address.zipcode}</p>
                             </div>
-                            <p className="order-item-phone">{order.address.phone}</p>
+                            <p className="order-item-phone"><i className="ri-phone-fill" style={{color: 'black'}}></i> {order.address.phone}</p>
                         </div>
                         <p>Items : {order.items.length}</p>
                         <p>${order.amount}</p>
