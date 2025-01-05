@@ -11,7 +11,7 @@ The application also integrates Stripe payment for secure and seamless transacti
 3. Place an order and make payment via Stripe
 4. Admin panel to view and manage orders
 5. Order status update functionality
-6. User account management (signup, login, update profile)
+6. User account management (signup, login, logout)
 
 ## Tech Stack
 - **Frontend**: React.js
@@ -74,6 +74,30 @@ The application also integrates Stripe payment for secure and seamless transacti
   Retrieves all orders for admin view.
 
 - **Update Order Status**  
-  `POST /api/order/status`  
-  Updates the status of a specific order (e.g., processing, shipped, delivered).
+  `POST /api/order/status` 
 
+## Payment Integration Details
+
+The application integrates Stripe Payment for secure and seamless transaction processing. Users can make payments for their orders directly through the platform.
+
+For testing purposes, you can use the following test card numbers provided by Stripe. These numbers simulate payment scenarios and will not charge actual money:
+
+### Stripe Test Card Numbers
+
+- **Successful Payment:**
+Card Number: 4242 4242 4242 4242
+Expiry Date: Any valid future date (e.g., 12/34)
+CVC: Any 3 digits (e.g., 123)
+Country: India
+
+- **Authentication Required:**
+Card Number: 4000 0025 0000 3155
+Expiry Date: Any valid future date
+CVC: Any 3 digits
+
+- **Payment Declined:**
+Card Number: 4000 0000 0000 9995
+Expiry Date: Any valid future date
+CVC: Any 3 digits
+
+You can find more details about test cards [[here on Stripe's offical documentation](https://docs.stripe.com/testing)]
