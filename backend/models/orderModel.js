@@ -23,12 +23,17 @@ const orderSchema=new mongoose.Schema({
     },
     date: {
         type:Date,
-        default:Date.now()
+        default:()=>Date.now()
     },
     payment: {
         type:Boolean,
         default:false
-    }
+    },
+    paymentType: {
+        type: String,
+        enum: ['online', 'cod'],
+        required: true, // Online or COD
+    },
 })
 
 const orderModel=mongoose.models.order || mongoose.model("order",orderSchema);

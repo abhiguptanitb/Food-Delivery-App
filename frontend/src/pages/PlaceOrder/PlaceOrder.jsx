@@ -28,6 +28,14 @@ const PlaceOrder = () => {
 
     const placeOrder=async (event)=>{
         event.preventDefault();
+
+        const form = event.target.closest('form'); // Get the form element
+        if (!form.reportValidity()) {
+            return; // If the form is invalid, stop execution
+        }
+
+        const paymentType = event.nativeEvent.submitter.value; // Get the value of the clicked button
+
         let orderItems=[];
         food_list.map((item)=>{
             if(cartItems[item._id]>0) {
@@ -40,13 +48,23 @@ const PlaceOrder = () => {
             address:data,
             items:orderItems,
             amount:getTotalCartAmount()+2,
+            paymentType
         }
-        let response=await axios.post(url+"/api/order/place",orderData,{headers:{token}});
-        if(response.data.success) {
-            const {session_url}=response.data;
-            window.location.replace(session_url);
-        } else {
-            alert("Error");
+        try {
+            const response = await axios.post(`${url}/api/order/place`, orderData, { headers: { token } });
+            if (response.data.success) {
+                if (paymentType === 'online') {
+                    const { session_url } = response.data;
+                    window.location.replace(session_url);
+                } else {
+                    navigate('/myorders');
+                }
+            } else {
+                alert("Error placing order");
+            }
+        } catch (error) {
+            console.error(error);
+            alert("An error occurred.");
         }
     }
 
@@ -101,7 +119,8 @@ const PlaceOrder = () => {
                             <b>${getTotalCartAmount()===0 ? 0 : getTotalCartAmount()+2}</b>
                         </div>
                     </div>
-                    <button type='submit'>PROCEED TO PAYMENT</button>
+                    <button type='submit' value='online'>Online Payment</button>
+                    <button type='submit' value='cod'>Cash on Delivery</button>
                 </div>
             </div>
         </form>
