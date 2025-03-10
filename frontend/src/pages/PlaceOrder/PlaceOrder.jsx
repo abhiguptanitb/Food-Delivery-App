@@ -26,7 +26,16 @@ const PlaceOrder = () => {
         setData(data=>({...data,[name]:value}));
     }
 
-    const placeOrder=async (paymentType)=>{
+    const placeOrder=async (event)=>{
+        event.preventDefault();
+
+        const form = event.target.closest('form'); // Get the form element
+        if (!form.reportValidity()) {
+            return; // If the form is invalid, stop execution
+        }
+
+        const paymentType = event.nativeEvent.submitter.value; // Get the value of the clicked button
+
         let orderItems=[];
         food_list.map((item)=>{
             if(cartItems[item._id]>0) {
@@ -59,17 +68,6 @@ const PlaceOrder = () => {
         }
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const form = event.target;
-        if (!form.checkValidity()) {
-            form.reportValidity(); // Trigger native validation messages
-            return;
-        }
-        const paymentType = event.nativeEvent.submitter.value; // Get the value of the clicked button
-        placeOrder(paymentType);
-    };
-
     const navigate=useNavigate();
 
     useEffect(()=>{
@@ -82,7 +80,7 @@ const PlaceOrder = () => {
     },[token])
 
     return (
-        <form onSubmit={handleSubmit} className='place-order'>
+        <form onSubmit={placeOrder} className='place-order'>
             <div className="place-order-left">
                 <p className="title">Delivery Information</p>
                 <div className="multi-fields">
@@ -121,8 +119,8 @@ const PlaceOrder = () => {
                             <b>${getTotalCartAmount()===0 ? 0 : getTotalCartAmount()+2}</b>
                         </div>
                     </div>
-                    <button type='submit' onClick={() => placeOrder('online')}>Online Payment</button>
-                    <button type='submit' onClick={() => placeOrder('cod')}>Cash on Delivery</button>
+                    <button type='submit' value='online'>Online Payment</button>
+                    <button type='submit' value='cod'>Cash on Delivery</button>
                 </div>
             </div>
         </form>
